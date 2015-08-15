@@ -8,6 +8,7 @@ import random
 
 #define the Max number of ratio
 MAXRATIO=10
+
 def GetRatio(x,y,m):
     #  x -> Horizontal coordinates
     #  y -> Longitudinal coordinates
@@ -25,7 +26,7 @@ def GetRatio(x,y,m):
             sum = sum + x[j]**i
         temp.append(sum)
 
-    #caculate sum of xi^j*yi where j is [0,1,...,m'
+    #caculate sum of xi^j*yi where j is [0,1,...,m]
     for i in range( m+1 ):
         sum=0.0
         for j in range( n ):
