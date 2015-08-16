@@ -67,7 +67,7 @@ def LossFunction(x,y,w,lam):
     L=L/n + (lam/2)*((len(w))**2)
     return L
     
-def LinerRe(x,y,lam=0.1):
+def PolyRe(x,y,lam=0.1):
     #  x -> Horizontal coordinates
     #  y -> Longitudinal coordinates
     # lam -> lam is a small digit
@@ -91,7 +91,7 @@ def Plot(x,y,lam):
     x=[float(i) for i in x]
     y=[float(i) for i in y]
     #get ratio
-    w=LinerRe( x , y , lam )
+    w=PolyRe( x , y , lam )
 
     y_new=[]
     x.sort()
