@@ -1,0 +1,9 @@
+Book : Machine Learning - Tom M. Mitchell
+BP-NN
+
+Judge the direction of head
+
+make headtrain
+./code/headtrain -n <network name> -t all_train.list -p <image file>
+
+TODO:about test
