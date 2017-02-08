@@ -1,0 +1,36 @@
+n=19;
+tw1 = W1; tw2=W1; tw1(n) = tw1(n) + 0.00001; tw2(n) = tw2(n) - 0.00001;
+%tb1=b1;tb2=b1;tb1(10) = tb1(10) + 0.0001;tb2(10) = tb2(10) - 0.0001;
+%tb1=b1;tb2=b1;tb1(10) = tb1(10) + 0.00001;tb2(10) = tb2(10) - 0.00001;
+%1 = W3; tw2 = W3; tw1(3) = tw1(3) + 0.00001;tw2(3) = tw2(3) - 0.00001;
+%in1= input1; in2 = input1; in1(n) = in1(n)+0.00001;in2(n) = in2(n) - 0.00001;
+    %W3 = tw1;
+    %b1 = tb1;
+    W1 = tw1;
+    %input1 = in1;
+		output1 = ConvForward(input1, W1, b1);
+		Routput1 = ReLU(output1);
+		output2 = ConvForward(Routput1, W2, b2);
+		Routput2 = ReLU(output2);
+		output3 = ConvForward(Routput2, W3, b3);
+		Routput3 = ReLU(output3);
+		output4 = W4 * Routput3(:) + b4;
+		a = exp(output4);
+        l1 = Loss(a,batch_label(i));
+        
+        %W3 = tw2;
+        %b1 = tb2;
+        W1 = tw2;
+        %input1 = in2;
+        output1 = ConvForward(input1, W1, b1);
+		Routput1 = ReLU(output1);
+		output2 = ConvForward(Routput1, W2, b2);
+		Routput2 = ReLU(output2);
+		output3 = ConvForward(Routput2, W3, b3);
+		Routput3 = ReLU(output3);
+		output4 = W4 * Routput3(:) + b4;
+        a = exp(output4);
+        l2 = Loss(a,batch_label(i));
+        
+        do = (l1-l2)/2/0.00001;
+        result = dinput1(100)-do;
