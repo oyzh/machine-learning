@@ -87,11 +87,11 @@ def run_cart(node, features):
 
 if __name__ == '__main__':
     data,label = generate_data(data_num, data_dim)
-    #data = np.arange(0,np.pi,0.01)
-    #data = data.reshape([data.shape[0],1])
-    #label = np.sin(data)
-    #    plt.scatter(data[:,0],data[:,1],c=label,alpha=0.5)
-    #    plt.show()
+#    data = np.arange(0,np.pi,0.01)
+#    data = data.reshape([data.shape[0],1])
+#    label = np.sin(data)
+#    plt.scatter(data[:,0],data[:,1],c=label,alpha=0.5)
+#    plt.show()
     root = cart_tree(data,label)
 
 
